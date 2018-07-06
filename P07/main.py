@@ -1,5 +1,5 @@
 def flatten(nasted_list):
-    flaten_list =[]
+    flaten_list = []
     x = [nasted_list]
 
     while len(x) > 0:
