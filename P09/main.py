@@ -1,23 +1,16 @@
-def pack(DL):#DefaultList 
-    PKL = [] #PacKedList
-    SL = []  #SplitList  
-    
-    for x in range(1,len(DL)):
-        if DL[x] == DL[x-1]:
-            SL.append(DL[x-1]) 
-            
-            if x == len(DL)-1:
-                SL.append(DL[x])
-                PKL.append(SL)
-                  
+def pack(Li):
+    SL = []
+    PL = []
+    st = 0
+    for x in Li:
+        if x in SL or len(SL) == 0:
+            SL.append(x) 
         else:
-            SL.append(DL[x-1])
-            PKL.append(SL)
+            PL.append(SL)
             SL = []
-            
-            if x == len(DL)-1:
-                SL.append(DL[x])
-                PKL.append(SL)
+            SL.append(x) 
+        st+=1
+        if st == len(Li):
+            PL.append(SL) 
+    return PL
 
-    return PKL
-            
