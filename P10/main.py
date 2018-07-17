@@ -1,6 +1,5 @@
 def encode(DL):#DefaultList 
     JL = []  #JudgeList
-    SL = []  #SplitList
     AL = []  #AnswerList
     for x in DL:
         if x in JL or len(JL) == 0:JL.append(x)
