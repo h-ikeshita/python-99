@@ -1,15 +1,9 @@
 def pack(receive_list):
     packed_list = []
-    target = 1
-    element_amount = 0
-    if len(receive_list)>0:
-        for source in receive_list:
-            if source != target:
-                packed_list.append([target]*element_amount)
-                element_amount = 0      
-                target = source
-            element_amount+=1
+    for i in receive_list:
+        if len(packed_list) == 0 or i != packed_list[-1][0]:
+            packed_list.append([i])
         else:
-            packed_list.append([target]*element_amount)
-    return packed_list
+            packed_list[-1].append(i)
+    return packed_list            
 
