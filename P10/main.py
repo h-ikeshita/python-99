@@ -1,17 +1,11 @@
-def encode(DL):#DefaultList 
-    JL = []  #JudgeList
-    AL = []  #AnswerList
-    for x in DL:
-        if x in JL or len(JL) == 0:JL.append(x)
-        else:
-            SL = [len(JL),JL[0]]
-            AL.append(SL)
-            JL = [x]
-    else:
-        if len(JL) > 0:
-            SL = [len(JL),JL[0]]
-            AL.append(SL)
-    return AL
+def encode(receive_list):
+    packed_list =[]
+    for i in receive_list:
+       if len(packed_list) == 0 or i != packed_list[-1][-1]:
+           packed_list.append([1,i])
+       else:
+           packed_list[-1][0]+=1
+    return packed_list
 
                   
     
