@@ -5,7 +5,4 @@ def encode(receive_list):
            packed_list.append([1,i])
        else:
            packed_list[-1][0]+=1
-    return packed_list
-
-                  
-    
+    return packed_list    
