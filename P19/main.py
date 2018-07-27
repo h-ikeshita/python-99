@@ -1,8 +1,11 @@
 def rotate(receive_list,rotate_distance):
     if rotate_distance > 0:
-        for i in range(0,rotate_distance):
-            receive_list.append(receive_list.pop(0))
+        receive_list.extend(receive_list[:rotate_distance])
+        del receive_list[:rotate_distance]
     elif rotate_distance < 0:
-        for i in range(0,rotate_distance,-1):
-            receive_list.insert(0,receive_list.pop(-1))
+        i = len(receive_list)
+        receive_list.extend(receive_list[:rotate_distance])
+        del receive_list[:rotate_distance+i]
     return receive_list
+
+
