@@ -1,8 +1,7 @@
-def drop(RL,Di):
+def drop(receive,drop_point):
     dropped_list = []
-    for i in RL:
-        if (RL.index(i)+1) % Di == 0:
-            continue
-        dropped_list.append(i)
+    for i in range(len(receive)):
+        if (i+1) % drop_point != 0:   
+            dropped_list.append(receive[i])
     return dropped_list
     
