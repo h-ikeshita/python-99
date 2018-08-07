@@ -1,8 +1,10 @@
-import itertools
-def combination(combi_length,parts):    
-    combi_tuple = list(itertools.combinations(parts,combi_length));
-    combi_list = []
-    for i in combi_tuple:
-        combi_list.append(list(i))
-    return combi_list
+def combination(size,members,index_member=0,split_list=[]):
+    stack = []
+    for i in range(index_member, len(members)):
+        add = split_list + [members[i]]
+        if len(add) == size:
+            stack = stack + [add]
+        elif len(add) < size:
+            stack = stack + combination(size,members,i+1,add)
+    return stack
          
