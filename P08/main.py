@@ -1,12 +1,10 @@
-def compress(L):
-     
-    for x in range(1,len(L)):
-        if L[x-1] == L[x]:
-           L[x-1] = ("empty")
-           
+def compress(receive):
+    answer = []
+    for i in receive:
+        if len(answer) == 0 or answer[-1] != i:
+            answer.append(i)
+    return answer
     
-    while ("empty") in L:
-            L.remove("empty")
-    return L
+
  
         
