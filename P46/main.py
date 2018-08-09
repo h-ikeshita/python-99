@@ -33,3 +33,10 @@ def EQ(matter1,matter2):
         return True
     return False
 
+def table(function):
+    answer = []
+    cause = [[True,True],[True,False],[False,True],[False,False]]
+    for i in range(len(cause)):
+        cause[i-1].append(function(cause[i-1][0],cause[i-1][1]))
+    return cause
+
